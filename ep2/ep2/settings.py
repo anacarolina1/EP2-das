@@ -55,6 +55,7 @@ ROOT_URLCONF = 'ep2.urls'
 
 TEMPLATES = [
     {
+
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
