@@ -1,0 +1,1 @@
+default_app_config = 'ep2Site.apps.ep2SiteConfig'

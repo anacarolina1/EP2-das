@@ -15,9 +15,6 @@ def music_list(request):
 
 def index(request):
 
-    ''' Defines the actions we want to perform when invoking 
-        the URL ( here http://127.0.0.1:8000/hw1/).'''
-
     if request.method == 'POST':
         form = MusicaForm(request.POST)
         if form.is_valid():
