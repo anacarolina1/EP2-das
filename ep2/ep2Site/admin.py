@@ -1,12 +1,11 @@
 from django.contrib import admin
 
-from .models import Musica, Review
+from .models import Review
 
 class ReviewAdmin(admin.ModelAdmin):
     model = Review
-    lista = ('musica', 'rating', 'nome_de_usuario', 'commentario', 'data_pub')
-    lista_filtro = ['data_pub', 'nome_de_usuario']
-    procurar = ['commentario']
+    lista = ('musica', 'url', 'data_lancamento', 'nome_de_usuario', 'comentario', 'rating')
+    lista_filtro = ['nome_de_usuario']
+    procurar = ['comentario']
 
-admin.site.register(Musica)
 admin.site.register(Review, ReviewAdmin)
