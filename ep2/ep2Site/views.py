@@ -4,7 +4,6 @@ import twitter
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponse
-from your.utils.lib import get_tweets
 
 
 def home(request):
@@ -37,17 +36,3 @@ def present_output(form):
 
 '''
 
-
-def get_tweets():
-    """
-    returns twitter feed with settings as described below, contains all related twitter settings
-    """
-    api = twitter.Api(consumer_key='yourcustomerkey',
-                      consumer_secret='customerkeysecret',
-                      access_token_key='accesstokenkey',
-                      access_token_secret='accesstokensecret')
-
-    context['tweets'] = get_tweets()
-
-    return api.GetUserTimeline(screen_name='twitter_screen_name', exclude_replies=True, include_rts=False)  # includes entities
- 
