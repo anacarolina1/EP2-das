@@ -14,7 +14,9 @@ def home(request):
         form = ReviewForm(request.POST)
         if form.is_valid():
             review = form.save(commit=False)
-            review.save()           
+            review.save() 
+            return music(request)
+          
     else:
         form = ReviewForm()
 
@@ -27,4 +29,4 @@ def home(request):
 
 def music(request):
     form = ReviewForm
-    return render(request, 'ep2Site/music.html', {'form': form})
+    return render(request, 'ep2Site/home.html', {'form': form})
