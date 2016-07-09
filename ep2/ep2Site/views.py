@@ -9,35 +9,22 @@ from models import Review
 
 
 def home(request):
-	form = ReviewForm
-	return render(request, 'ep2Site/home.html', {'form': form})
-
-
-
-
-def index(request):
 
     if request.method == 'POST':
-        form = MusicaForm(request.POST)
+        form = ReviewForm(request.POST)
         if form.is_valid():
-            form = form.save(commit=False)
-            return present_output(form)
+            review = form.save(commit=False)
+            review.save()           
     else:
-        form = MusicaForm()
+        form = ReviewForm()
 
-    return render_to_response('output.html',
+    return render_to_response('ep2Site/home.html',
             {'form': form}, context_instance=RequestContext(request))
 
-'''
-def present_output(form):
-
-    return HttpResponse([
 
 
-        ])
 
-'''
 
 def music(request):
-	form = ReviewForm
-	return render(request, 'ep2Site/music.html', {'form': form})
+    form = ReviewForm
+    return render(request, 'ep2Site/music.html', {'form': form})
