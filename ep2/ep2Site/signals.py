@@ -4,8 +4,6 @@ from django.conf import settings
 from ep2Site.models import Review
 import os.path
 
- 
- 
 @receiver(post_save, sender=Review)
 def model_post_save(sender, **kwargs):
     print('Saved: {}'.format(kwargs['instance'].__dict__))

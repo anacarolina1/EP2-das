@@ -13,9 +13,12 @@ class Review(models.Model):
     url = models.CharField(max_length=200)
     data_lancamento = models.DateTimeField('data de lancamento')
     nome_de_usuario = models.CharField(max_length=100)
-    comentario = models.CharField(max_length=200)
+    review = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
 
     def __unicode__(self):
         return self.musica
     
+class Comment(models.Model):
+
+    comentario = models.CharField(max_length=200)

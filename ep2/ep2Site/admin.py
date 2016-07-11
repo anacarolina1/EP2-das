@@ -4,8 +4,8 @@ from .models import Review
 
 class ReviewAdmin(admin.ModelAdmin):
     model = Review
-    list_display = ['musica', 'url', 'data_lancamento', 'nome_de_usuario', 'comentario', 'rating']
+    list_display = ['musica', 'url', 'data_lancamento', 'nome_de_usuario', 'review', 'rating']
     list_filter = ['nome_de_usuario']
-    search_fields = ['comentario']
+    search_fields = ['review']
 
 admin.site.register(Review, ReviewAdmin)
