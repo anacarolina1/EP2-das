@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ep2Site',
     'bootstrap3',
+    'ep2Site.templatetags'
 
 ]
 
@@ -123,5 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
 
 

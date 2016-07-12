@@ -44,8 +44,6 @@
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Home</a></li>
         <li><a href="review.html">Faça sua review</a></li>
-        <li><a href="#section3">Artistas</a></li>
-        <li><a href="#section3">Álbuns</a></li>
       </ul><br>
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search Blog..">
@@ -81,7 +79,7 @@
       </form>
       <br><br>
       
-      <p><span class="badge">1</span> Comentário:</p><br>
+      <p><span class="badge">2</span> Comentário:</p><br>
       
       <div class="row">
         <div class="col-sm-2 text-center">
@@ -106,6 +104,27 @@
     </div>
   </div>
 </div>
+
+<div class="block social-block social-twitter">
+    {% load twitter_tags %}
+  
+    <ul>
+        {% for tweet in tweets %}
+        <li>
+            <div class="tweet-meta">
+                <a href="https://www.twitter.com/{{ tweet.user.screen_name }}/status/{{ tweet.id }}" target="_blank">
+                    <img src="{{ tweet.user.profile_image_url }}" width="32" height="32" />
+                    <h2>{{ tweet.user.name }}<br /><span>@{{ tweet.user.screen_name }} &middot; {{ tweet.created_at|twitter_date }}</span></h2>
+                </a>
+            </div>
+            <p>{{ tweet|expand_tweet_urls|urlize_tweet_text|safe }}</p>
+        </li>
+        {% endfor %}
+
+    </ul>
+    
+</div>
+
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
