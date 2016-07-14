@@ -1,6 +1,6 @@
 # EP2-das
 
-O projeto está utilizando o django-plugins, para criar um plugin que gerencia a criação de urls.
+O projeto está utilizando o *django-plugins*, para criar um plugin que gerencia a criação de urls.
 
 O projeto não está rodando porque ele deu o seguinte erro ao importar o plugin dentro da models.py:
 
