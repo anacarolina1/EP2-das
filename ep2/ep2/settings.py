@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ep2Site',
     'bootstrap3',
+    'djangoplugins',
+    'ep2plugin',
+
 
 
 ]

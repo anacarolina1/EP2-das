@@ -1,4 +1,8 @@
+from __future__ import absolute_import
 from django.db import models
+from djangoplugins.fields import PluginField
+
+from ep2Site.plugins import ContentType
 
 
 class Review(models.Model):
@@ -15,9 +19,13 @@ class Review(models.Model):
     data_lancamento = models.DateTimeField('data de lancamento')
     review = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
+    plugin = PluginField(ContentType, editable=False)
 
     def __unicode__(self):
         return self.musica
+
+    def get_absolute_url(self):
+        return self.plugin.get_plugin().get_read_url(self)
 
 
 

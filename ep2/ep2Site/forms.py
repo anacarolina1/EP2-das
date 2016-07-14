@@ -1,6 +1,7 @@
+from __future__ import absolute_import
 from django import forms
-
 from .models import Review
+
 
 RATING_CHOICES = (
     (1, '1'),

@@ -1,4 +1,4 @@
-
+{% load plugins %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,6 +62,7 @@
 
       {% block content %}
         <h1>Insira seu Post</h1>
+        {% get_plugins ep2Site.plugins.ContentType as review %}
           <form method="POST" class="post-form">{% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-success">salvar</button>
