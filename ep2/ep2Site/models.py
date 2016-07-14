@@ -9,16 +9,15 @@ class Review(models.Model):
         (4, '4'),
         (5, '5'),
     )
+    nome_de_usuario = models.CharField(max_length=200)
     musica = models.CharField(max_length=200)
     url = models.CharField(max_length=200)
     data_lancamento = models.DateTimeField('data de lancamento')
-    nome_de_usuario = models.CharField(max_length=100)
     review = models.CharField(max_length=200)
     rating = models.IntegerField(choices=RATING_CHOICES)
 
     def __unicode__(self):
         return self.musica
-    
-class Comment(models.Model):
 
-    comentario = models.CharField(max_length=200)
+
+

@@ -1,6 +1,8 @@
 from django.contrib import admin
 
 from .models import Review
+from embed_video.admin import AdminVideoMixin
+
 
 class ReviewAdmin(admin.ModelAdmin):
     model = Review
@@ -9,3 +11,5 @@ class ReviewAdmin(admin.ModelAdmin):
     search_fields = ['review']
 
 admin.site.register(Review, ReviewAdmin)
+
+
